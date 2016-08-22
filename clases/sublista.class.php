@@ -50,17 +50,19 @@
 //        }
 //        
         public function create($desc,$url,$idlista,$tipo){
-//            print_r($desc);
-//                        die();
+//            print_r($tipo);
+//                        exit();
             $sql = "INSERT INTO sublista(descripcion,url,lista,tipo) VALUES (?,?,?,?)";
             $query = $this->_con->db->prepare($sql);
             $query->bindParam(1,$desc);
             $query->bindParam(2,$url);
             $query->bindParam(3,$idlista);
             $query->bindParam(4,$tipo);
+//            print_r($this->_con->db->errorInfo()); exit();
             if($query->execute()){
                 return 1;
             }else{
+//                print_r($this->_con->db->errorInfo()); exit();
                 return 0;
             }
             

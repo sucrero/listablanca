@@ -61,6 +61,8 @@
             $res = $objSubLista->viewcmbo();
             break;
         case 'savesublista':
+//            print_r($_POST);
+//                        die();
             $band = 1;
             foreach ($_POST as $row){
 //                print_r($row);
