@@ -1,0 +1,122 @@
+body
+{
+	height: 100%;
+    min-width: 100%;
+    position: absolute;
+	color: #666666;
+    font-family: "Open Sans",Arial,sans-serif;
+    font-size: 14px;
+    
+}
+
+h1	{
+	font-size:35px; 
+	letter-spacing:-1px;
+	color:#000; 
+    text-transform:capitalize;
+    text-align:center;
+   
+	}
+h2	{
+	font-size:18px; 
+	letter-spacing:0px;
+	color:#000; 
+     display:inline;
+     text-shadow: 0 1px 1px #FAFAFA;
+	}
+h3	{
+	font-size:18px; 
+	color:#2E2E2E; 
+	}
+  
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+    color:#1330FC;
+}
+a:hover {
+	text-decoration: none;
+    
+}
+a:active {
+	text-decoration: none;
+} 
+  
+  
+        
+.highlight{font-weight:bold; font-size:16px; color:#1330FC;}
+
+.alinear_centro{text-align:center;}
+.alinear_derecha{text-align:right;}
+p{margin-top: 5px; height: 10px;}
+
+header{
+	width:100%; height:90px;  
+	text-align:center; 
+	padding-top:5px;
+	margin-bottom:4px;
+	background: none repeat scroll 0 0 #F1F1F1;
+    border-bottom: 1px solid #E5E5E5;
+  
+	
+	}
+
+.franja
+    {
+        background-image:url(../imagenes/franja.png);
+        background-repeat:repeat-x;
+        height:45px;
+   
+    }
+
+section{
+	margin: 0 auto;
+    padding-bottom: 100px;
+    width: 800px;
+    height:460px;
+	}
+
+.fondo_atencion{
+    width:800px;
+    height:367px;
+    margin-top:-10px;
+    background-image:url(../imagenes/restricted1.png);
+    background-repeat:no-repeat;
+    background-position:center;
+    z-index:0;
+}
+
+.contenido{ overflow-y:auto;  z-index:1; width:780px; text-align:center;  margin-top:50px; margin-left: auto; margin-right:auto; padding-top:5px;}
+    .texto2{margin-top:29px; margin-left:10px; width:800px; display:block; text-align:justify;}
+
+
+.botones_img{width:520px; margin:auto; margin-top:100px; text-align:center;}
+    .img_izq{}
+    .img_der{margin-left:60px;}
+
+footer
+{
+background: none repeat scroll 0 0 #F5F5F5;
+    border-top: 1px solid #E5E5E5;
+    bottom: 0;
+    height: 15px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+
+}
+
+footer .content{
+
+	color: #7b7b7b;
+	line-height: 17px;	
+	font-size: 0.85em;
+    line-height: 0;
+    padding-top: 9px;
+    white-space: nowrap;
+	text-transform:capitalize;
+	text-align:center;
+	
+	}

@@ -1,0 +1,33 @@
+.panel-title{
+    font-size: 18px;
+}
+
+.list-group{
+    margin-bottom: 0;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0);
+}
+
+.panel-group .panel{
+    margin-bottom: 10px;
+}
+
+.list-group-item{
+    border: 0;
+}
+a:link{   
+ text-decoration:none;   
+}   
+/*a{
+    color: #000;
+}*/
+.col-md-6 {
+    width: 45%;
+}
+
+li{
+    font-size: 17px;
+}
+
+.container{
+    width: 100%;
+}
