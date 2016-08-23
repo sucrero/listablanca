@@ -43,7 +43,6 @@
             break;
         case 'savetipo':
             $band = 1;
-            
             foreach ($_POST as $row){
 //                print_r($row);
 //                        die();
@@ -61,12 +60,8 @@
             $res = $objSubLista->viewcmbo();
             break;
         case 'savesublista':
-//            print_r($_POST);
-//                        die();
             $band = 1;
             foreach ($_POST as $row){
-//                print_r($row);
-//                        die();
                 if($row == ''){
                     $band = 0;
                 }

@@ -4,6 +4,11 @@ $(function() {
     viewListaDetails();
     
 });
+//$("#open-Modal").click(function () {
+//    var msj = $(this).data('msj');
+//    
+//    $(".modal-body").val( msj );
+//});
 //###############   PRUEBA ###############
 // $("li").click(function() {
 //        $("li").removeClass(".active" );  // a todo <li> se le quita el estilo
@@ -18,7 +23,6 @@ function viewListMenu(){
         dataType: 'json',
         complete: function (data) {
             var dt =  JSON.parse(data.responseText);
-//            alert(dt);
             var tipo = dt;
             var list = '<li class="header">CATEGOR&Iacute;AS</li>';
             for(i=0;i< tipo.length;i++){
@@ -41,30 +45,41 @@ function viewListaDetails(id,nom){
             var list2 = '';
             var band = 0;
             var cont = '';
+//            alert(lista[0][1]);
             if(lista.length !== 0){
                 for (j=0;j < lista.length;j++){
                     band++;
+                    
                     if(band%2 !== 0){
-                        list += '<li class="list-group-item">&nbsp;<a href="'+lista[j][2]+'" target="_blank">'+band+'- '+lista[j][1]+'</a></li>';
+                        if(lista[j][2] === "#myModal"){
+                            list += '<li class="list-group-item">&nbsp;<a href="'+lista[j][2]+'" data-toggle="modal" data-lista ="'+lista[j][0]+'" data-title="'+lista[j][1]+'">'+band+'- '+lista[j][1]+'</a></li>';
+                        }else{
+                            list += '<li class="list-group-item">&nbsp;<a href="'+lista[j][2]+'" target="_blank">'+band+'- '+lista[j][1]+'</a></li>';
+                        }
                     }else{
-                        list2 += '<li class="list-group-item">&nbsp;<a href="'+lista[j][2]+'" target="_blank">'+band+'- '+lista[j][1]+'</a></li>';
+                        if(lista[j][2] === "#myModal"){
+                            list2 += '<li class="list-group-item">&nbsp;<a href="'+lista[j][2]+'" data-toggle="modal" data-lista ="'+lista[j][0]+'" data-title="'+lista[j][1]+'">'+band+'- '+lista[j][1]+'</a></li>';
+                        }else{
+                            list2 += '<li class="list-group-item">&nbsp;<a href="'+lista[j][2]+'" target="_blank">'+band+'- '+lista[j][1]+'</a></li>';
+                        }
+                        
                     }
                 }
-                    cont += '<div class="container">';
-                        cont += '<div class="col-md-6">';
-                            cont += '<ul class="list-group">';
-                                cont += list;
-                            cont += '</ul>';
-                        cont += '</div>';
-                        cont += '<div class="col-md-6">';
-                            cont += '<ul class="list-group">';
-                                cont += list2;
-                            cont += '</ul>';
-                        cont += '</div>';
+                cont += '<div class="container">';
+                    cont += '<div class="col-md-6">';
+                        cont += '<ul class="list-group">';
+                            cont += list;
+                        cont += '</ul>';
                     cont += '</div>';
+                    cont += '<div class="col-md-6">';
+                        cont += '<ul class="list-group">';
+                            cont += list2;
+                        cont += '</ul>';
+                    cont += '</div>';
+                cont += '</div>';
 
-                    $("#lista").html(cont);
-                    $(".box-title").html(nom);
+                $("#lista").html(cont);
+                $(".box-title").html(nom);
             }else{
                 
             }
@@ -72,6 +87,22 @@ function viewListaDetails(id,nom){
         }
     });
 }
+
+$('#myModal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget); // Button that triggered the modal
+    var recipient = button.data('title'); // Extract info from data-* attributes
+    var idLista = button.data('lista'); 
+    var cont = '';
+//    alert(idLista);
+//    
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this);
+    modal.find('.modal-title').text('Opciones para ' + recipient);
+    modal.find('.modal-body').text("cuerpo");
+
+//    modal.find('.modal-body').text(cont);
+});
 
 //function mostrar(){
 //    $.ajax({

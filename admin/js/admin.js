@@ -27,7 +27,7 @@ function savesublista(){
         complete: function (data) {
             var dt =  JSON.parse(data.responseText);
             if(dt){
-                $("#contlista").empty();
+//                $("#contlista").empty();
 //                crearTablaLista();
                 limpiarFormSubLista();
             }else{

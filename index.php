@@ -125,6 +125,26 @@
       </div>
         <!-- fin -->
     </section>
+    
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header alert-danger">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container" id="container"></div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
@@ -147,18 +167,9 @@
 <script src="admin/js/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="admin/js/bootstrap.min.js"></script>
-<!--<script src="js/jquery.dataTables.min.js"></script>-->
-
-<!--<script src="js/dataTables.bootstrap.min.js"></script>-->
-
-<!-- SlimScroll -->
-<!--<script src="admin/js/jquery.slimscroll.min.js"></script>-->
-<!-- FastClick -->
-<!--<script src="admin/js/fastclick.js"></script>-->
 <!-- AdminLTE App -->
 <script src="admin/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<!--<script src="admin/js/demo.js"></script>-->
 <script src="js/principal.js"></script>
 </body>
 </html>
