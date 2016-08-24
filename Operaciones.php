@@ -72,6 +72,10 @@
                 $res = $band;
             }
             break;
+        case 'sublistaDetails':
+            $res = $objSubLista->detailsublist($_POST['id']);
+//            echo $res;
+            break;
         
     }
 //    print_r($res2);exit();

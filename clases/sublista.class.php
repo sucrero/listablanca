@@ -28,10 +28,7 @@
                 $query = $this->_con->db->prepare($sql);
                 $query->execute();
                 $datos = $query->fetchAll(PDO::FETCH_NUM);
-                
-//                print_r($datos); exit();
                 return $datos;
-//                print_r($datos);                exit();
             } catch (PDOException $e) {
                 return "Fallo la busqueda: ".$e->getMessage();
             }
@@ -59,15 +56,24 @@
             $query->bindParam(2,$url);
             $query->bindParam(3,$idlista);
             $query->bindParam(4,$tipo);
-//            print_r($sql);exit();
 //            print_r($this->_con->db->errorInfo()); exit();
             if($query->execute()){
                 return 1;
             }else{
-//                print_r($this->_con->db->errorInfo()); exit();
                 return 0;
             }
             
             //return $this->_con->db->lastInsertId();
+        }
+        
+        public function detailsublist($idlista){
+            $sql = "SELECT * FROM sublista where lista = ?";
+            $query = $this->_con->db->prepare($sql);
+            $query->bindParam(1,$idlista);
+            $query->execute();
+            $datos = $query->fetchAll(PDO::FETCH_NUM);
+            print_r($datos);
+                        die();
+            return $datos;
         }
     }
