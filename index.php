@@ -5,20 +5,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Inicio | Lista Blanca</title>
-  <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="admin/css/bootstrap.min.css">
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="admin/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <!--<link rel="stylesheet" href="admin/css/ionicons.min.css">-->
-  <!-- Theme style -->
   <link rel="stylesheet" href="admin/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="admin/css/_all-skins.min.css">
-  <!--<link rel="stylesheet" href="admin/css/jquery.dataTables.min.css">-->
   <link rel="stylesheet" href="css/estilos.css">
  
 
@@ -35,7 +26,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a class="logo">
+    <a href="http://localhost/lista.html/" title="Inicio" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>H</b>idro</span>
       <!-- logo for regular state and mobile devices -->
@@ -50,6 +41,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
+      
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-sign-in"></i></a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 
@@ -111,10 +112,30 @@
                         <div class = "jumbotron">
                             <h1>Bienvenidos!</h1>
                             <p>En este espacio encontrará las páginas web permitas, <br>las cuales podrá acceder desde el menú lateral izquierdo.</p>
+<!--                            <h6>Para sugerir la incorporación de una nueva P&aacute;gina Web el
+                                    <strong>Coordinador o Superintendente del departamento</strong>, debe solicitarla mediante un correo a Gerencia a travéz del
+                                <a href="http://www.hidrocaribe.com.ve" target="_blank">Zimbra</a></h6>-->
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#infModal"><i class="fa fa-exclamation  fa-lg"  style="font-size:30px; vertical-align: middle;"></i> Sugiere una nueva URL!</button>
+                                <div id="infModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header modal-header-primary">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title">Sugiere una nueva URL!</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p class="text-justify">Para sugerir la incorporación de una nueva P&aacute;gina Web a la Lista Blanca el
+                                    <strong>Coordinador o Superintendente</strong> del departamento, debe solicitarla mediante un correo a Gerencia a travéz del
+                                    <a href="http://www.hidrocaribe.com.ve" target="_blank">Zimbra</a></p>
+                                                <p class="text-justify">Una vez aprobada dicha solicitud, la Gerencia emitirá la aprobación a la Coord. de Tecnología de Información</p>
+                                            </div>
 
-                            <p>
-                               <a class = "btn btn-primary btn-lg" role = "button">Learn more</a>
-                            </p>
+<!--                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                            </div>-->
+                                        </div>
+                                    </div>
+                                </div>
                          </div>
                         </div>
                     </div>
@@ -126,19 +147,19 @@
         <!-- fin -->
     </section>
     
-    <div id="myModal" class="modal fade">
-        <div class="modal-dialog modal-lg">
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header alert-danger">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-header modal-header-primary">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title"></h4>
                 </div>
                 <div class="modal-body">
-                    <div class="container" id="container"></div>
+                    <!--<div class="container" id="container"></div>-->
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -151,7 +172,7 @@
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 0.0.1
+      <b>Version</b> 1.0
     </div>
       <strong>Copyright &copy; <?php date('Y')?> <a target="blank" href="http://www.hidrocaribe.gob.ve">C.A. Hidrol&oacute;gica del Caribe</a>.</strong> Todos los derechos reservados.
   </footer>
@@ -161,6 +182,7 @@
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
 </div>
+
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->

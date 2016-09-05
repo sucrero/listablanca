@@ -72,8 +72,8 @@
             $query->bindParam(1,$idlista);
             $query->execute();
             $datos = $query->fetchAll(PDO::FETCH_NUM);
-            print_r($datos);
-                        die();
+//            print_r($datos);
+//                        die();
             return $datos;
         }
     }

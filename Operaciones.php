@@ -22,6 +22,8 @@
             $res = $objMenu->viewall();
             break;
         case 'savelista':
+//            print_r($_POST);
+//                        die();
             $band = 1;
             foreach ($_POST as $row){
                 if($row == ''){
@@ -60,6 +62,7 @@
             $res = $objSubLista->viewcmbo();
             break;
         case 'savesublista':
+            
             $band = 1;
             foreach ($_POST as $row){
                 if($row == ''){
@@ -73,7 +76,11 @@
             }
             break;
         case 'sublistaDetails':
+//            print_r($_POST);
+//                        exit();
             $res = $objSubLista->detailsublist($_POST['id']);
+//            print_r($res);
+//                        die();
 //            echo $res;
             break;
         

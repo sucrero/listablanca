@@ -47,11 +47,13 @@
         
         
         public function create($desc, $url, $tipo){
-            $sql = "INSERT INTO lista(descripcion,url,tipo) VALUES (?,?,?)";
+//            print_r($desc.' '.$url.' '.$tipo);            die();
+            $sql = "INSERT INTO lista(descripcion,url,menu) VALUES (?,?,?)";
             $query = $this->_con->db->prepare($sql);
             $query->bindParam(1,$desc);
             $query->bindParam(2,$url);
             $query->bindParam(3,$tipo);
+//            print_r($this->_con->db->errorInfo()); exit();
             if($query->execute()){
                 return 1;
             }else{
@@ -80,7 +82,7 @@
         }
         
         public function update($id, $desc, $url, $tipo, $status){
-            $sql = "UPDATE lista SET descripcion = ?, url = ?, tipo = ?, is_active = ? WHERE id = ?";
+            $sql = "UPDATE lista SET descripcion = ?, url = ?, menu = ?, is_active = ? WHERE id = ?";
             $query = $this->_con->db->prepare($sql);
             $query->bindParam(1,$desc);
             $query->bindParam(2,$url);
