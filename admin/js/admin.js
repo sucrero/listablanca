@@ -196,6 +196,9 @@ function savetipo(){
     });
 }
 
+function cargar(){
+    $("#contenido").load('reglista.php');
+}
 
 
 

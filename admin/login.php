@@ -68,7 +68,7 @@
     <!-- /.social-auth-links -->
 
     <a href="#">Olvidé mi contrase&ntilde;a</a><br>
-    <a href="register.html" class="text-center">Register a new membership</a>
+    <a href="register.html" class="text-center">Registar usuario</a>
 
   </div>
   <!-- /.login-box-body -->
