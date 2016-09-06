@@ -110,12 +110,13 @@
                     <div id="lista" class="box-body table-responsive no-padding">
                         <div class="container">
                         <div class = "jumbotron">
-                            <h1>Bienvenidos!</h1>
-                            <p>En este espacio encontrará las páginas web permitas, <br>las cuales podrá acceder desde el menú lateral izquierdo.</p>
+                            <div class="col-md-8">
+                                <h1>Bienvenidos!</h1>
+                                <p>En este espacio encontrará las páginas web permitas, <br>las cuales podrá acceder desde el menú lateral izquierdo.</p>
 <!--                            <h6>Para sugerir la incorporación de una nueva P&aacute;gina Web el
                                     <strong>Coordinador o Superintendente del departamento</strong>, debe solicitarla mediante un correo a Gerencia a travéz del
                                 <a href="http://www.hidrocaribe.com.ve" target="_blank">Zimbra</a></h6>-->
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#infModal"><i class="fa fa-exclamation  fa-lg"  style="font-size:30px; vertical-align: middle;"></i> Sugiere una nueva URL!</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#infModal">Sugiere una nueva URL! <i class="fa fa-arrow-right fa-lg"  style="vertical-align: middle;"></i> </button>
                                 <div id="infModal" class="modal fade" role="dialog">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -127,7 +128,7 @@
                                                 <p class="text-justify">Para sugerir la incorporación de una nueva P&aacute;gina Web a la Lista Blanca el
                                     <strong>Coordinador o Superintendente</strong> del departamento, debe solicitarla mediante un correo a Gerencia a travéz del
                                     <a href="http://www.hidrocaribe.com.ve" target="_blank">Zimbra</a></p>
-                                                <p class="text-justify">Una vez aprobada dicha solicitud, la Gerencia emitirá la aprobación a la Coord. de Tecnología de Información</p>
+                                                <p class="text-justify">Una vez aprobada dicha solicitud, la Gerencia emitirá la aprobación a la Coord. de Tecnología de Información.</p>
                                             </div>
 
 <!--                                            <div class="modal-footer">
@@ -136,6 +137,10 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="imagenes/Hidrocaribe.png" class="img-circle">
+                            </div>
                          </div>
                         </div>
                     </div>
@@ -192,6 +197,7 @@
 <!-- AdminLTE App -->
 <script src="admin/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
+<script src="admin/js/demo.js"></script>
 <script src="js/principal.js"></script>
 </body>
 </html>
