@@ -1,7 +1,7 @@
 $(function() {
     cmbTipo(); 
     cmbLista(); 
-    crearTablaLista();
+//    crearTablaLista();
     
     $("#guardarlista").click(function(event){
         event.preventDefault();
@@ -15,7 +15,34 @@ $(function() {
         event.preventDefault();
         savesublista();
     });
-    
+//    $('#table_id').DataTable( {
+//        stateSave: true, //enable state saving (pagination,search per column,current page, search inputs....à
+//            "stateSaveCallback": function (settings, data) {
+//                // Send an Ajax request to the server with the state object
+//                $.ajax( {
+//                    "url": "../Operaciones.php?opcion=tablalista",
+//                    "data": {"name":"id", "state": data} ,//you can use the id of the datatable as key if it's unique
+//                    "dataType": "json",
+//                    "type": "POST",
+//                    "success": function () {}
+//                } );
+//            }
+//    } );
+    $('#table_id').DataTable({
+        "columns": [
+            {"data": "id"},
+            {"data": "descripcion"},
+            {"data": "url"},
+            {"data": "menu"},
+            {"data": "status"}
+        ],
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            url: '../Operaciones.php?opcion=tablalista',
+            type: 'POST'
+        }
+    });
 });
 
 function savesublista(){

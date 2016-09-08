@@ -19,7 +19,8 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="css/_all-skins.min.css">
   <!--<link rel="stylesheet" href="css/jquery.dataTables.min.css">-->
- 
+  <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -325,6 +326,17 @@
                         </thead>
                         <tbody id="contlista"></tbody>
                       </table>
+                        <table id="table_id" class="display">
+                            <thead>
+                                <tr>
+                                    <th>Nro.</th>
+                                    <th>Descripci&oacute;n</th>
+                                    <th>URL</th>
+                                    <th>Tipo</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                        </table>
                     </div>
                     <!-- /.box-body -->
                 </div>
@@ -559,5 +571,13 @@
 <!-- AdminLTE for demo purposes -->
 <script src="js/demo.js"></script>
 <script src="js/admin.js"></script>
+<script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script>
+<!--<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>-->
+
 </body>
 </html>
+<script>
+//    $(document).ready( function () {
+//    $('#table_id').DataTable();
+//} );
+</script>

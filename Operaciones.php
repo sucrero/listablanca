@@ -37,7 +37,11 @@
             }
             break;
         case 'tablalista':
+//            print_r($_POST);
+//                        die();
             $res = $objLista->viewall();
+            print_r($res);
+                        die();
             break;
         //########prueba############
         case 'listaDetails':
