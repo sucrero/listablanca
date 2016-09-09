@@ -15,40 +15,25 @@ $(function() {
         event.preventDefault();
         savesublista();
     });
-//    $('#table_id').DataTable( {
-//        stateSave: true, //enable state saving (pagination,search per column,current page, search inputs....à
-//            "stateSaveCallback": function (settings, data) {
-//                // Send an Ajax request to the server with the state object
-//                $.ajax( {
-//                    "url": "../Operaciones.php?opcion=tablalista",
-//                    "data": {"name":"id", "state": data} ,//you can use the id of the datatable as key if it's unique
-//                    "dataType": "json",
-//                    "type": "POST",
-//                    "success": function () {}
-//                } );
-//            }
-//    } );
-    $('#table_id').DataTable({
-//        "pagingType": "scrolling",
+    var t = $('#table_id').DataTable({
         "language": {
             "url": "js/Spanish.json"
         },
         
         "columns": [
-            {"data": "id"},
-            {"data": "descripcion"},
-            {"data": "url"},
-            {"data": "menu"},
-            {"data": "is_active"}
+            {"data": "id", "searchable": false},
+            {"data": "descripcion", "searchable": false},
+            {"data": "url"}
         ],
+        "searching": true,
         "columnDefs": [ {
             "searchable": false,
             "orderable": false,
-            "targets": [0,3,4]
+            "targets": 0
         } ],
-        "order": [[ 0, 'asc' ]],
+        "order": [[ 1, 'asc' ]],
 //        "pagingType": "scrolling",
-//        responsive: true,
+        responsive: true,
         "processing": true,
         "serverSide": true,
         
@@ -56,8 +41,12 @@ $(function() {
             url: '../Operaciones.php?opcion=tablalista',
             type: 'POST'
         }
-        
     });
+    t.on('order.dt search.dt', function () {
+        t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    } ).draw();
 });
 
 function savesublista(){
@@ -238,8 +227,45 @@ function savetipo(){
     });
 }
 
-function cargar(){
-    $("#contenido").load('reglista.php');
+function cargar_form(pagina,capa){
+//    var cap = "#"+capa;
+//    $(cap).html = "";
+$("#contenido").empty();
+    $.ajax({
+        data: "",
+        url: 'login.php',
+        type: 'GET',
+        complete: function (data) {
+//            alert(data.responseText);
+            
+            $("#contenido").html = data.responseText;
+            var elementos = $("script");
+            for(i=0;i<elementos.length;i++)
+            {
+                    var eScript=elementos[i].text;
+                    eval(eScript);
+            }            
+        }
+    });
+    
+//AjaxRequest.get
+//    (
+//        {
+//            'parameters':''                                 	
+//            ,'url':''+pagina+'.php'
+//            ,'onSuccess':function(req)
+//            {
+//                xGetElementById(capa).innerHTML = req.responseText;
+//                var elementos = document.getElementById(capa).getElementsByTagName('script');
+//                for(i=0;i<elementos.length;i++)
+//                {
+//                        var eScript=elementos[i].text;
+//                        eval(eScript);
+//                }
+//            }
+//        }
+//    )
+    
 }
 
 

@@ -66,14 +66,16 @@
                     /* WHERE Clause for searching */
                     for($i=0 ; $i < count($_POST['columns']);$i++){
                         $column = $_POST['columns'][$i]['data'];//we get the name of each column using its index from POST request
-//                        if($column != 'menu' && $column != 'is_active'){
+                        if($column != 'id' && $column != 'menu' && $column != 'is_active'){
                             $where[]="$column like '%".$_POST['search']['value']."%'";                            
-//                        }
+                        }
                     }
                     $where = "WHERE ".implode(" OR " , $where);// id like '%searchValue%' or name like '%searchValue%' ....
                     /* End WHERE */
 
                     $sql = sprintf("SELECT COUNT(*) FROM %s %s", 'lista' , $where);//Search query without limit clause (No pagination)
+//                    print_r($sql);
+//                                        die();
                     $query = $this->_con->db->prepare($sql);
                     $query->execute();
                     $dato = $query->fetch(PDO::FETCH_ASSOC);

@@ -151,8 +151,8 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
             <li class="header">MEN&Uacute;</li>
-            <li><a href="#" onclick="cargar();"><i class="fa fa-edit"></i> <span>Lista Blanca</span></a></li>
-            <li><a href="#" onclick="cargar("capa","pagina")"><i class="fa fa-book"></i> <span>Usuario</span></a></li>
+            <li><a href="#" onclick=""><i class="fa fa-edit"></i> <span>Lista Blanca</span></a></li>
+            <li><a onclick="cargar_form('login','contenido')"><i class="fa fa-book"></i> <span>Usuario</span></a></li>
             <!--<div id="listamenu"></div>-->
         
       </ul>
@@ -178,9 +178,10 @@
     </section>
         
     <!-- Main content -->
-    <section class="content" id="contenido">
+    <section class="content">
         <!-- inicio -->
-        <div class="row">
+        <div  id="contenido">
+    <div class="row">
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
@@ -204,7 +205,7 @@
           </div>
           <!-- /.box -->
         </div>
-      </div>
+    </div>
         <!-- fin -->
         <div class="row">
             <!-- left column -->
@@ -330,11 +331,9 @@
                         <table id="table_id" class="table table-striped table-bordered table-condensed table-hover">
                             <thead>
                                 <tr>
-                                    <th>Nro.</th>
+                                    <th>ID</th>
                                     <th>Descripci&oacute;n</th>
                                     <th>URL</th>
-                                    <th>Tipo</th>
-                                    <th>Status</th>
                                 </tr>
                             </thead>
                         </table>
@@ -344,7 +343,7 @@
             </div>
         <!--/.col (right) -->
       </div>
-
+</div>
     </section>
     <!-- /.content -->
   </div>
@@ -577,8 +576,3 @@
 
 </body>
 </html>
-<script>
-//    $(document).ready( function () {
-//    $('#table_id').DataTable();
-//} );
-</script>
