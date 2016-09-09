@@ -18,8 +18,9 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="css/_all-skins.min.css">
-  <!--<link rel="stylesheet" href="css/jquery.dataTables.min.css">-->
-  <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <!--<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css">-->
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -314,7 +315,7 @@
                     <!-- /.box-header -->
 
                     <div class="box-body table-responsive no-padding">
-                      <table class="table table-hover">
+<!--                      <table class="table table-hover">
                           <thead>
                             <tr>
                                 <th>Nro.</th>
@@ -325,8 +326,8 @@
                             </tr>
                         </thead>
                         <tbody id="contlista"></tbody>
-                      </table>
-                        <table id="table_id" class="display">
+                      </table>-->
+                        <table id="table_id" class="table table-striped table-bordered table-condensed table-hover">
                             <thead>
                                 <tr>
                                     <th>Nro.</th>
@@ -572,7 +573,7 @@
 <script src="js/demo.js"></script>
 <script src="js/admin.js"></script>
 <script type="text/javascript" charset="utf8" src="js/jquery.dataTables.min.js"></script>
-<!--<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>-->
+<script type="text/javascript" charset="utf8" src="js/dataTables.bootstrap.min.js"></script>
 
 </body>
 </html>

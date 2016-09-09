@@ -29,19 +29,34 @@ $(function() {
 //            }
 //    } );
     $('#table_id').DataTable({
+//        "pagingType": "scrolling",
+        "language": {
+            "url": "js/Spanish.json"
+        },
+        
         "columns": [
             {"data": "id"},
             {"data": "descripcion"},
             {"data": "url"},
             {"data": "menu"},
-            {"data": "status"}
+            {"data": "is_active"}
         ],
+        "columnDefs": [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": [0,3,4]
+        } ],
+        "order": [[ 0, 'asc' ]],
+//        "pagingType": "scrolling",
+//        responsive: true,
         "processing": true,
         "serverSide": true,
+        
         "ajax": {
             url: '../Operaciones.php?opcion=tablalista',
             type: 'POST'
         }
+        
     });
 });
 

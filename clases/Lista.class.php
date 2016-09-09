@@ -66,7 +66,9 @@
                     /* WHERE Clause for searching */
                     for($i=0 ; $i < count($_POST['columns']);$i++){
                         $column = $_POST['columns'][$i]['data'];//we get the name of each column using its index from POST request
-                        $where[]="$column like '%".$_POST['search']['value']."%'";
+//                        if($column != 'menu' && $column != 'is_active'){
+                            $where[]="$column like '%".$_POST['search']['value']."%'";                            
+//                        }
                     }
                     $where = "WHERE ".implode(" OR " , $where);// id like '%searchValue%' or name like '%searchValue%' ....
                     /* End WHERE */
@@ -79,20 +81,38 @@
                     
 
                     /* SQL Query for search with limit and orderBy clauses*/
-                    $sql = sprintf("SELECT * FROM %s %s ORDER BY %s %s limit %d , %d ", 'lista' , $where ,$orderBy, $orderType ,$start,$length  );
+                    $sql = sprintf("SELECT * FROM %s %s ORDER BY %s %s limit %d offset %d", 'lista' , $where , $orderBy, $orderType, $length, $start  );
+//                    print_r($sql);
                     $query = $this->_con->db->prepare($sql);
                     $query->execute();
-                    $data = $query->fetch(PDO::FETCH_ASSOC);
+                    $data = $query->fetchAll(PDO::FETCH_ASSOC);
+                    $i=0;
+                    $y=0;
+                    $datos = array();
+                    foreach ($data as $row ) {
+                        $datos[] = $row ;
+                        $datos[$i++]['nro'] = ++$y;
+                    }
 //                     = getData($sql);
                 }
                 /* END SEARCH */
                 else {
-                    $sql = sprintf("SELECT * FROM %s ORDER BY %s %s limit %d , %d ", 'lista' ,$orderBy,$orderType ,$start , $length);
+                    $sql = sprintf("SELECT * FROM %s ORDER BY %s %s limit %d offset %d", 'lista' , $orderBy, $orderType, $length, $start);
+//                    print_r($sql);
                     $query = $this->_con->db->prepare($sql);
                     $query->execute();
-                    $data = $query->fetch(PDO::FETCH_ASSOC);
+                    $data = $query->fetchAll(PDO::FETCH_ASSOC);
+                    $i=0;
+                    $y=0;
+                    $datos = array();
+                    foreach ($data as $row ) {
+                        $datos[] = $row ;
+                        $datos[$i++]['nro'] = ++$y;
+                    }
+                    
 //                    $data = getData($sql);
-
+//                print_r($datos);
+//                                die();
                     $recordsFiltered = $recordsTotal;
                 }
 
@@ -101,7 +121,7 @@
                     "draw" => intval($draw),
                     "recordsTotal" => $recordsTotal,
                     "recordsFiltered" => $recordsFiltered,
-                    "data" => $data
+                    "data" => $datos
                 );
 
                 echo json_encode($response);
