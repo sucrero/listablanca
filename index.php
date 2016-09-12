@@ -26,7 +26,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="http://localhost/lista.html/" title="Inicio" class="logo">
+    <a href="<?php echo "http://".$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI'];?>" title="Inicio" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>H</b>idro</span>
       <!-- logo for regular state and mobile devices -->
@@ -84,7 +84,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista Blanca
+       
         <small></small>
       </h1>
     </section>
