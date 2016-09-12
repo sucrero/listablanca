@@ -6,11 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Inicio | Lista Blanca</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  
   <link rel="stylesheet" href="admin/css/bootstrap.min.css">
   <link rel="stylesheet" href="admin/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="admin/css/AdminLTE.min.css">
   <link rel="stylesheet" href="admin/css/_all-skins.min.css">
-  <link rel="stylesheet" href="css/estilos.css">
+  
  
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -32,6 +34,7 @@
       <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>Hidrocaribe</b></span>
     </a>
+    
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
       <!-- Sidebar toggle button-->
@@ -41,16 +44,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      
-      <div class="navbar-custom-menu">
+<!--      <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-          
-          <!-- Control Sidebar Toggle Button -->
+           Control Sidebar Toggle Button 
           <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-sign-in"></i></a>
+            <a href="<?php //echo "http://".$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI'];?>admin/login.php"><i class="fa fa-sign-in"></i></a>
           </li>
         </ul>
-      </div>
+      </div>-->
     </nav>
   </header>
 
@@ -95,7 +96,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
-                    <div class="box-header">
+                    <div class="box-header with-border">
                         <h3 class="box-title"></h3>
 <!--                        <div class="box-tools">
                             <div style="width: 150px;" class="input-group input-group-sm">
@@ -110,7 +111,7 @@
                     <div id="lista" class="box-body table-responsive no-padding">
                         <div class="container">
                         <div class = "jumbotron">
-                            <div class="col-md-8">
+                            <!--<div class="col-md-8">-->
                                 <h1>Bienvenidos!</h1>
                                 <p>En este espacio encontrará las páginas web permitas, <br>las cuales podrá acceder desde el menú lateral izquierdo.</p>
 <!--                            <h6>Para sugerir la incorporación de una nueva P&aacute;gina Web el
@@ -137,10 +138,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div>
+                            <!--</div>-->
+<!--                            <div>
                                 <img src="imagenes/Hidrocaribe.png" class="img-circle">
-                            </div>
+                            </div>-->
                          </div>
                         </div>
                     </div>

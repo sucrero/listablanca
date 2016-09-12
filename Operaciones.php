@@ -62,7 +62,9 @@
                 $res = $band;
             }
             break;
-        case 'cmblista':
+        case 'cmblista': 
+//            print_r("hola");
+//                        die();
             $res = $objSubLista->viewcmbo();
             break;
         case 'savesublista':

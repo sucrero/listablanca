@@ -1,6 +1,6 @@
 $(function() {
     cmbTipo(); 
-    cmbLista(); 
+    
 //    crearTablaLista();
     
     $("#guardarlista").click(function(event){
@@ -15,38 +15,7 @@ $(function() {
         event.preventDefault();
         savesublista();
     });
-    var t = $('#table_id').DataTable({
-        "language": {
-            "url": "js/Spanish.json"
-        },
-        
-        "columns": [
-            {"data": "id", "searchable": false},
-            {"data": "descripcion", "searchable": false},
-            {"data": "url"}
-        ],
-        "searching": true,
-        "columnDefs": [ {
-            "searchable": false,
-            "orderable": false,
-            "targets": 0
-        } ],
-        "order": [[ 1, 'asc' ]],
-//        "pagingType": "scrolling",
-        responsive: true,
-        "processing": true,
-        "serverSide": true,
-        
-        "ajax": {
-            url: '../Operaciones.php?opcion=tablalista',
-            type: 'POST'
-        }
-    });
-    t.on('order.dt search.dt', function () {
-        t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-            cell.innerHTML = i+1;
-        } );
-    } ).draw();
+    cargar_form('lista','contenido');
 });
 
 function savesublista(){
@@ -96,7 +65,7 @@ function cmbLista(){
         dataType: 'json',
         complete: function (data) {
             var dt =  JSON.parse(data.responseText);
-//            alert(dt);
+//            alert(dt); 
             var combo="<select class='form-control' id='ilstlista' name='lista' title='Tipo'><option value=''>Seleccione...</option>";
             for (var i in dt){
                  combo +=  "<option value='"+dt[i][0]+"'>"+dt[i][1]+"</option>";
@@ -230,7 +199,7 @@ function savetipo(){
 function cargar_form(pagina,capa){
 //    var cap = "#"+capa;
 //    $(cap).html = "";
-$("#contenido").empty();
+$("#"+capa).empty();
     $.ajax({
         data: "",
         url: 'login.php',
@@ -238,7 +207,7 @@ $("#contenido").empty();
         complete: function (data) {
 //            alert(data.responseText);
             
-            $("#contenido").html = data.responseText;
+            $("#"+capa).load(pagina+'.php');
             var elementos = $("script");
             for(i=0;i<elementos.length;i++)
             {
