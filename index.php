@@ -138,7 +138,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div>
                                 <img src="imagenes/Hidrocaribe.png" class="img-circle">
                             </div>
                          </div>
