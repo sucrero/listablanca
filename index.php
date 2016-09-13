@@ -85,8 +85,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-       
-        <small></small>
+          Lista Blanca
+          <small>C.A. Hidrol&oacute;gica del Caribe - U.G. Sucre Oeste</small>
       </h1>
     </section>
         
@@ -180,7 +180,8 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0
     </div>
-      <strong>Copyright &copy; <?php date('Y')?> <a target="blank" href="http://www.hidrocaribe.gob.ve">C.A. Hidrol&oacute;gica del Caribe</a>.</strong> Todos los derechos reservados.
+      <strong>Desarrollado por la </strong>Coordinaci&oacute;n Tecnolog&iacute;a de Informaci&oacute;n - U.G. Sucre Oeste. Todos los derechos reservados.
+      <!--<strong>Copyright &copy; <?php date('Y')?> <a target="blank" href="http://www.hidrocaribe.gob.ve">C.A. Hidrol&oacute;gica del Caribe</a>.</strong> Todos los derechos reservados.-->
   </footer>
 
   <!-- /.control-sidebar -->
