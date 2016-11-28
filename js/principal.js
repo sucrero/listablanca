@@ -4,6 +4,7 @@ $(function() {
     viewListaDetails();
 });
 
+
 function viewListMenu(){
 //    var icons = ["fa-bank","fa-mail","fa-globe","fa-book","fa-home"];
     $.ajax({
@@ -18,6 +19,7 @@ function viewListMenu(){
             for(i=0;i< tipo.length;i++){
                 list += '<li><a href="#" onclick="viewListaDetails('+tipo[i][0]+',\''+tipo[i][1]+'\')"><i class="fa '+tipo[i][2]+'"></i> <span>'+tipo[i][1]+'</span></a></li>';
             }
+//            list += '<li><a href="#" onclick="viewListaDetails()"><i class="fa fa-file-pdf-o"></i> <span>Formatos</span></a></li>';
             $(".sidebar-menu").html(list);
         }
     });
@@ -119,7 +121,7 @@ function viewmodalsublist(idlista,titulo){
                 
             }
             $('#myModal').modal('show')
-                    .find('.modal-title').text('Versiones disponibles para '+titulo);
+                    .find('.modal-title').text(titulo);
         }
     });
 }

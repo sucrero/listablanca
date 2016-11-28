@@ -1,21 +1,21 @@
 $(function() {
-    cmbTipo(); 
+//    cmbTipo(); 
     
 //    crearTablaLista();
     
-    $("#guardarlista").click(function(event){
-        event.preventDefault();
-        savelista();
-    });
-    $("#guardartipo").click(function(event){
-        event.preventDefault();
-        savetipo();
-    });
+//    $("#guardarlista").click(function(event){
+//        event.preventDefault();
+//        savelista();
+//    });
+//    $("#guardartipo").click(function(event){
+//        event.preventDefault();
+//        savetipo();
+//    });
     $("#guardarsublista").click(function(event){
         event.preventDefault();
         savesublista();
     });
-    cargar_form('lista','contenido');
+//    cargar_form('lista','contenido');
 });
 
 function savesublista(){
@@ -39,23 +39,23 @@ function savesublista(){
 }
 
 
-function cmbTipo(){
-    $.ajax({
-        url: "../Operaciones.php",
-        type: 'POST',
-        data: {opcion: "cmbtipo"},
-        dataType: 'json',
-        complete: function (data) {
-            var dt =  JSON.parse(data.responseText);
-            var combo="<select class='form-control' id='ilsttipo' name='tipo' title='Tipo'><option value=''>Seleccione...</option>";
-            for (var i in dt){
-                 combo +=  "<option value='"+dt[i][0]+"'>"+dt[i][1]+"</option>";
-            }
-            combo += "</select>";
-            $('#combtipo').html(combo);
-        }
-    });
-}
+//function cmbTipo(){
+//    $.ajax({
+//        url: "../Operaciones.php",
+//        type: 'POST',
+//        data: {opcion: "cmbtipo"},
+//        dataType: 'json',
+//        complete: function (data) {
+//            var dt =  JSON.parse(data.responseText);
+//            var combo="<select class='form-control' id='ilsttipo' name='tipo' title='Tipo'><option value=''>Seleccione...</option>";
+//            for (var i in dt){
+//                 combo +=  "<option value='"+dt[i][0]+"'>"+dt[i][1]+"</option>";
+//            }
+//            combo += "</select>";
+//            $('#combtipo').html(combo);
+//        }
+//    });
+//}
 
 function cmbLista(){
     $.ajax({
@@ -76,25 +76,25 @@ function cmbLista(){
     });
 }
 
-function savelista(){
-    $.ajax({
-        url: "../Operaciones.php",
-        type: 'POST',
-        data: $('#lista').serialize()+ "&opcion=" + "savelista",
-        dataType: 'json',
-        complete: function (data) {
-            var dt =  JSON.parse(data.responseText);
-            if(dt){
-                $("#contlista").empty();
-                crearTablaLista();
-                limpiarFormLista();
-            }else{
-                alert("verifique");
-            }
-            
-        }
-    });
-}
+//function savelista(){
+//    $.ajax({
+//        url: "../Operaciones.php",
+//        type: 'POST',
+//        data: $('#lista').serialize()+ "&opcion=" + "savelista",
+//        dataType: 'json',
+//        complete: function (data) {
+//            var dt =  JSON.parse(data.responseText);
+//            if(dt){
+//                $("#contlista").empty();
+//                crearTablaLista();
+//                limpiarFormLista();
+//            }else{
+//                alert("verifique");
+//            }
+//            
+//        }
+//    });
+//}
 
 function limpiarFormSubLista(){
     $("#sublista")[0].reset();
@@ -176,25 +176,26 @@ function crearTablaLista(){
 function limpiarFormTipo(){
     $("#tipo")[0].reset();
 }
-function savetipo(){
-    $.ajax({
-        url: "../Operaciones.php",
-        type: 'POST',
-        data: $('#tipo').serialize()+ "&opcion=" + "savetipo",
-        dataType: 'json',
-        complete: function (data) {
-            var dt =  JSON.parse(data.responseText);
-            if(dt){
-                $("#contlista").empty();
-                cmbTipo(); 
-                limpiarFormTipo();
-            }else{
-                alert("verifique");
-            }
-            
-        }
-    });
-}
+//function savetipo(){
+//    alert('hola');
+//    $.ajax({
+//        url: "../Operaciones.php",
+//        type: 'POST',
+//        data: $('#tipo').serialize()+ "&opcion=" + "savetipo",
+//        dataType: 'json',
+//        complete: function (data) {
+//            var dt =  JSON.parse(data.responseText);
+//            if(dt){
+//                $("#contlista").empty();
+//                cmbTipo(); 
+//                limpiarFormTipo();
+//            }else{
+//                alert("verifique");
+//            }
+//            
+//        }
+//    });
+//}
 
 function cargar_form(pagina,capa){
 //    var cap = "#"+capa;

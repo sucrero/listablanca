@@ -55,7 +55,7 @@
                             </div>
                           <!-- /.box-body -->
                           <div class="box-footer">
-                              <button type="submit" id="guardarlista" class="btn btn-primary">Guardar</button>
+                              <button type="submit" id="guardarlista" class="btn btn-primary">Guardar Lista</button>
                           </div>
                         </form>
                     </div>
@@ -85,7 +85,7 @@
                       <!-- /.box-body -->
 
                       <div class="box-footer">
-                          <button type="submit" id="guardartipo" class="btn btn-primary">Guardar</button>
+                          <button type="submit" id="guardartipo" class="btn btn-primary">Guardar Men&uacute;</button>
                       </div>
                     </form>
                   </div>
@@ -164,36 +164,88 @@
         <script type="text/javascript" charset="utf8" src="js/dataTables.bootstrap.min.js"></script>
         <script>
             cmbLista(); 
-        var t = $('#table_id').DataTable({
-        "language": {
-            "url": "js/Spanish.json"
-        },
-        
-        "columns": [
-            {"data": "id", "searchable": false},
-            {"data": "descripcion", "searchable": false},
-            {"data": "url"}
-        ],
-        "searching": true,
-        "columnDefs": [ {
-            "searchable": false,
-            "orderable": false,
-            "targets": 0
-        } ],
-        "order": [[ 1, 'asc' ]],
-//        "pagingType": "scrolling",
-        responsive: true,
-        "processing": true,
-        "serverSide": true,
-        
-        "ajax": {
-            url: '../Operaciones.php?opcion=tablalista',
-            type: 'POST'
-        }
-    });
-    t.on('order.dt search.dt', function () {
-        t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-            cell.innerHTML = i+1;
-        } );
-    } ).draw();
+            var t = $('#table_id').DataTable({
+                "language": {
+                    "url": "js/Spanish.json"
+                },
+                "columns": [
+                    {"data": "id", "searchable": false},
+                    {"data": "descripcion", "searchable": false},
+                    {"data": "url"}
+                ],
+                "searching": true,
+                "columnDefs": [ {
+                    "searchable": false,
+                    "orderable": false,
+                    "targets": 0
+                } ],
+                "order": [[ 1, 'asc' ]],
+//              "pagingType": "scrolling",
+                responsive: true,
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    url: '../Operaciones.php?opcion=tablalista',
+                    type: 'POST'
+                }
+            });
+            t.on('order.dt search.dt', function () {
+                t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+                    cell.innerHTML = i+1;
+                });
+            } ).draw();
+            $("#guardartipo").click(function(event){
+               event.preventDefault();
+               $.ajax({
+                   url: "../Operaciones.php",
+                   type: 'POST',
+                   data: $('#tipo').serialize()+ "&opcion=" + "savetipo",
+                   dataType: 'json',
+                   complete: function (data) {
+                       var dt =  JSON.parse(data.responseText);
+                       if(dt){
+                           $("#contlista").empty();
+                           cmbTipo(); 
+                           limpiarFormTipo();
+                       }else{
+                           alert("verifique");
+                       }
+
+                   }
+               });
+            });
+            $("#guardarlista").click(function(event){
+                event.preventDefault();
+                $.ajax({
+                    url: "../Operaciones.php",
+                    type: 'POST',
+                    data: $('#lista').serialize()+ "&opcion=" + "savelista",
+                    dataType: 'json',
+                    complete: function (data) {
+                        var dt =  JSON.parse(data.responseText);
+                        if(dt){
+                            $("#contlista").empty();
+//                            crearTablaLista();
+                            limpiarFormLista();
+                        }else{
+                            alert("verifique");
+                        }
+                    }
+                });
+            });
+            $.ajax({
+                url: "../Operaciones.php",
+                type: 'POST',
+                data: {opcion: "cmbtipo"},
+                dataType: 'json',
+                complete: function (data) {
+                    var dt =  JSON.parse(data.responseText);
+                    var combo="<select class='form-control' id='ilsttipo' name='tipo' title='Tipo'><option value=''>Seleccione...</option>";
+                    for (var i in dt){
+                         combo +=  "<option value='"+dt[i][0]+"'>"+dt[i][1]+"</option>";
+                    }
+                    combo += "</select>";
+                    $('#combtipo').html(combo);
+                }
+            });
         </script>

@@ -13,7 +13,7 @@
  * @author Oswaldo Franco
  * 
  */
-    class Sublista {
+    class Formato {
         private $_con;
         private $_fechaReg;
 
@@ -22,31 +22,18 @@
             $this->_fechaReg = date('Y-m-d h:i:s');
         }
         
-        public function viewcmbo(){
-            try {
-                $sql = "SELECT * FROM lista WHERE url like '#myModal%' AND is_active = TRUE ORDER BY descripcion";
-                $query = $this->_con->db->prepare($sql);
-                $query->execute();
-                $datos = $query->fetchAll(PDO::FETCH_NUM);
-                return $datos;
-            } catch (PDOException $e) {
-                return "Fallo la busqueda: ".$e->getMessage();
-            }
-        }
+//        public function viewcmbo(){
+//            try {
+//                $sql = "SELECT * FROM lista WHERE url like '#myModal%' AND is_active = TRUE ORDER BY descripcion";
+//                $query = $this->_con->db->prepare($sql);
+//                $query->execute();
+//                $datos = $query->fetchAll(PDO::FETCH_NUM);
+//                return $datos;
+//            } catch (PDOException $e) {
+//                return "Fallo la busqueda: ".$e->getMessage();
+//            }
+//        }
         
-        public function viewcmborev(){
-            try {
-                $sql = "SELECT * FROM lista WHERE url like '#myModal%' AND is_active = TRUE AND menu = 7 ORDER BY descripcion ASC";
-                $query = $this->_con->db->prepare($sql);
-                $query->execute();
-                $datos = $query->fetchAll(PDO::FETCH_NUM);
-                return $datos;
-            } catch (PDOException $e) {
-                return "Fallo la busqueda: ".$e->getMessage();
-            }
-        }
-
-
 //        public function viewallmenu(){
 //            try {
 //                $sql = "SELECT A.menu, B.descripcion,B.icon FROM lista as A INNER JOIN menu as B ON A.menu=B.id WHERE A.is_active = TRUE GROUP BY A.menu,B.descripcion,B.icon ORDER BY B.descripcion";

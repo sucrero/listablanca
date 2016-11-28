@@ -50,7 +50,7 @@
         }
         
         public function create($desc,$icon){
-//            print_r($desc);
+//            print_r($desc, $icon);
 //                        die();
             $sql = "INSERT INTO menu(descripcion,icon) VALUES (?,?)";
             $query = $this->_con->db->prepare($sql);
@@ -59,6 +59,7 @@
             if($query->execute()){
                 return 1;
             }else{
+//                print_r($this->_con->db->errorInfo()); exit();
                 return 0;
             }
             

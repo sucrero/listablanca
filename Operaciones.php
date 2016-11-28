@@ -50,9 +50,7 @@
         case 'savetipo':
             $band = 1;
             foreach ($_POST as $row){
-//                print_r($row);
-//                        die();
-                if($row == ''){
+                if($row === ''){
                     $band = 0;
                 }
             }
@@ -63,8 +61,6 @@
             }
             break;
         case 'cmblista': 
-//            print_r("hola");
-//                        die();
             $res = $objSubLista->viewcmbo();
             break;
         case 'savesublista':
@@ -88,6 +84,9 @@
 //            print_r($res);
 //                        die();
 //            echo $res;
+            break;
+        case 'cmbrev':
+            $res = $objSubLista->viewcmborev();
             break;
         
     }
