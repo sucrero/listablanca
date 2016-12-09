@@ -126,10 +126,10 @@
                                                 <h4 class="modal-title">Sugiere una nueva URL!</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <p class="text-justify">Para sugerir la incorporación de una nueva P&aacute;gina Web a la Lista Blanca el
-                                    <strong>Coordinador o Superintendente</strong> del departamento, debe solicitarla mediante un correo a Gerencia a travéz del
-                                    <a href="http://www.hidrocaribe.com.ve" target="_blank">Zimbra</a></p>
-                                                <p class="text-justify">Una vez aprobada dicha solicitud, la Gerencia emitirá la aprobación a la Coord. de Tecnología de Información.</p>
+                                                <p class="text-justify"><h5>Para sugerir la incorporación de una nueva P&aacute;gina Web a la Lista Blanca el
+                                    <strong>Coordinador o Superintendente</strong> del departamento, debe solicitarla mediante un correo electrónico a la Gerencia a travéz del
+                                    <a href="http://www.hidrocaribe.com.ve" target="_blank">Zimbra</a></h5></p>
+                                    <p class="text-justify"><h5>Una vez aprobada dicha solicitud, la Gerencia emitirá la aprobación a la Coord. de Tecnología de Información para su publicaci&oacute;.</h5></p>
                                             </div>
 
 <!--                                            <div class="modal-footer">
@@ -180,7 +180,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0
     </div>
-      <strong>Desarrollado por la </strong>Coordinaci&oacute;n Tecnolog&iacute;a de Informaci&oacute;n - U.G. Sucre Oeste. Todos los derechos reservados.
+      <strong>Desarrollado por la </strong>Coordinaci&oacute;n Tecnolog&iacute;a de Informaci&oacute;n - U.G. Sucre Oeste. C.A. Hidrol&oacute;gica del Caribe. Todos los derechos reservados.
       <!--<strong>Copyright &copy; <?php date('Y')?> <a target="blank" href="http://www.hidrocaribe.gob.ve">C.A. Hidrol&oacute;gica del Caribe</a>.</strong> Todos los derechos reservados.-->
   </footer>
 
